@@ -4,16 +4,15 @@
         <details>${project.description}</details>
 
         <config name="org.ops4j.datasource-my_bank_ds">
-            osgi.jdbc.driver.class = com.mysql.jdbc.Driver
-            osgi.jdbc.driver.name=mysql
+            osgi.jdbc.driver.class = com.microsoft.sqlserver.jdbc.SQLServerDriver
             pool=dbcp2
             xa=false
-            url=jdbc:mysql://localhost:3306/my_bank?autoReconnect=true
-            user=root
-            password=root
+            url=jdbc:sqlserver://localhost\\MSSQLSERVER;;databaseName=my_bank;;username=tmachado;;password=tmachado;
+            jdbc.pool.maxTotal=20
             databaseName=my_bank
             dataSourceName=my_bank_ds
             ops4j.preHook=my_bank
+            org.apache.karaf.features.configKey = org.ops4j.datasource-my_bank_ds
         </config>
 
         <bundle start-level="80">mvn:org.mybank/currentAccount-persistence/${project.version}</bundle>
