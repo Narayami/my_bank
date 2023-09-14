@@ -30,4 +30,5 @@
  Soap should be like this:
 ![image](https://github.com/Narayami/my_bank/assets/43100019/f890f996-f8eb-4f5e-8a95-fb3dfd93bb12)
 
+-All done, you are free to perform the operations available for both rest and soap!
 
