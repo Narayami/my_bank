@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://schema.org.mybank/faults"
+        xmlns:tns="http://schema.org.mybank/faults"
+        elementFormDefault="qualified">
+
+
+    <element name="code" type="tns:ErrorCodeType" />
+
+    <element name="detail" type="tns:ErrorDescriptionType" />
+
+    <element name="validationFault" type="tns:ValidationFaultType" />
+
+    <simpleType name="ErrorCodeType">
+        <restriction base="string"/>
+    </simpleType>
+
+    <simpleType name="ErrorDescriptionType">
+        <restriction base="string"/>
+    </simpleType>
+
+    <complexType name="AuthorizationFaultType">
+        <sequence>
+            <element ref="tns:code" />
+            <element ref="tns:detail" />
+        </sequence>
+    </complexType>
+
+    <complexType name="ValidationFaultType">
+        <sequence>
+            <element ref="tns:code" />
+            <element ref="tns:detail" />
+        </sequence>
+    </complexType>
+
+
+</schema>

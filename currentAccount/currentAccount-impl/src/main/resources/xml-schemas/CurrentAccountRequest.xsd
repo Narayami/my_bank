@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://wsdl.org.mybank/CurrentAccountRequest"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://wsdl.org.mybank/CurrentAccountRequest">
+
+	<!-- elements -->
+
+	<element name="getContractCurrentAccountsRequest" type="tns:GetContractCurrentAccountsRequestType"/>
+	<element name="updateContractCurrentAccountRequest" type="tns:UpdateContractCurrentAccountRequestType"/>
+	<element name="createContractCurrentAccountRequest" type="tns:CreateContractCurrentAccountRequestType"/>
+	<element name="deleteContractCurrentAccountRequest" type="tns:DeleteContractCurrentAccountRequestType"/>
+	<element name="getAvailableContractsRequest" type="tns:GetAvailableContractsRequest"/>
+
+	<element name="currentAccount" type="tns:CurrentAccountType"/>
+
+	<element name="contractId" type="tns:ContractIdType"/>
+	<element name="currentAccountId" type="tns:CurrentAccountIdType"/>
+	<element name="contractDescription" type="tns:ContractDescriptionType"/>
+
+	<!-- simple types -->
+
+	<simpleType name="ContractIdType">
+		<restriction base="string"/>
+	</simpleType>
+
+	<simpleType name="CurrentAccountIdType">
+		<restriction base="long"/>
+	</simpleType>
+
+	<simpleType name="ContractDescriptionType">
+		<restriction base="string"/>
+	</simpleType>
+
+	<!-- complex types -->
+
+	<complexType name="GetContractCurrentAccountsRequestType">
+		<sequence>
+			<element ref="tns:contractId"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="UpdateContractCurrentAccountRequestType">
+		<sequence>
+			<element ref="tns:currentAccount"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="CreateContractCurrentAccountRequestType">
+		<sequence>
+			<element ref="tns:contractId"/>
+			<element ref="tns:contractDescription"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="DeleteContractCurrentAccountRequestType">
+		<sequence>
+			<element ref="tns:currentAccountId"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="CurrentAccountType">
+		<sequence>
+			<element ref="tns:currentAccountId"/>
+			<element ref="tns:contractId"/>
+			<element ref="tns:contractDescription"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetAvailableContractsRequest">
+		<sequence>
+
+		</sequence>
+	</complexType>
+
+</schema>

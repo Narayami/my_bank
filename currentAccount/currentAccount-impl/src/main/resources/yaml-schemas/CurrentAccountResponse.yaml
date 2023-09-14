@@ -1,0 +1,43 @@
+components:
+  schemas:
+    ContractIdType:
+      type: string
+      description: The current account contract id.
+    GetContractCurrentAccountsResponseType:
+      type: object
+      properties:
+        currentAccounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractCurrentAccountType'
+    ContractCurrentAccountType:
+      type: object
+      properties:
+        contractId:
+          type: string
+        currentAccountId:
+          type: integer
+          format: int64
+        contractDescription:
+          type: string
+    GetAvailableContractsResponseType:
+      type: object
+      properties:
+        contracts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractIdType'
+openapi: 3.0.0
+paths:
+  /null:
+    get:
+      summary: TBD Model
+      operationId: ''
+      responses:
+        default:
+          description: empty response
+info:
+  license:
+    name: Tiago
+  title: Current Account Response Model
+  version: 1.0.0

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="${project.artifactId}-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.6.0">
+    <feature name='${project.artifactId}' description='${project.name}' version='${project.version}'>
+        <details>${project.description}</details>
+
+        <config name="org.ops4j.datasource-my_bank_ds">
+            osgi.jdbc.driver.class = com.mysql.jdbc.Driver
+            osgi.jdbc.driver.name=mysql
+            pool=dbcp2
+            xa=false
+            url=jdbc:mysql://localhost:3306/my_bank?autoReconnect=true
+            user=root
+            password=root
+            databaseName=my_bank
+            dataSourceName=my_bank_ds
+            ops4j.preHook=my_bank
+        </config>
+
+        <bundle start-level="80">mvn:org.mybank/currentAccount-persistence/${project.version}</bundle>
+        <bundle start-level="80">mvn:org.mybank/currentAccount-config/${project.version}</bundle>
+        <bundle start-level="80">mvn:org.mybank/currentAccount-api/${project.version}</bundle>
+        <bundle start-level="80">mvn:org.mybank/currentAccount-impl/${project.version}</bundle>
+
+        <capability>
+            osgi.service;objectClass=javax.sql.DataSource;effective:=active;osgi.jndi.service.name=my_bank_ds;dataSourceName=my_bank_ds
+        </capability>
+
+    </feature>
+</features>

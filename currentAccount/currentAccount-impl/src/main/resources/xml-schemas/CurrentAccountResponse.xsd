@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+        targetNamespace="http://wsdl.org.mybank/CurrentAccountResponse"
+        elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://wsdl.org.mybank/CurrentAccountResponse">
+
+	<!-- elements -->
+
+	<element name="contractCurrentAccount" type="tns:ContractCurrentAccountType"/>
+	<element name="getContractCurrentAccountsResponse" type="tns:GetContractCurrentAccountsResponseType"/>
+	<element name="getAvailableContractsResponse" type="tns:GetAvailableContractsResponseType"/>
+
+	<element name="currentAccountId" type="tns:CurrentAccountIdType"/>
+	<element name="contractId" type="tns:ContractIdType"/>
+	<element name="contractDescription" type="tns:ContractDescriptionType"/>
+
+	<!-- simple types -->
+
+	<simpleType name="CurrentAccountIdType">
+		<restriction base="long"/>
+	</simpleType>
+
+	<simpleType name="ContractDescriptionType">
+		<restriction base="string"/>
+	</simpleType>
+
+	<simpleType name="ContractIdType">
+		<restriction base="string"/>
+	</simpleType>
+
+	<!-- complex types -->
+
+	<complexType name="ContractCurrentAccountType">
+		<sequence>
+			<element ref="tns:currentAccountId"/>
+			<element ref="tns:contractId"/>
+			<element ref="tns:contractDescription"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetContractCurrentAccountsResponseType">
+		<sequence>
+			<element ref="tns:contractCurrentAccount" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetAvailableContractsResponseType">
+		<sequence>
+			<element ref="tns:contractId" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+</schema>

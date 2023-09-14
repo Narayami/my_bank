@@ -1,0 +1,10 @@
+pathParam: currentAccountId
+
+body:
+
+{
+	"currentAccount": {
+		"contractId":"29925",
+		"contractDescription": "Tiago update"
+	}
+}

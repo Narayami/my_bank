@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://wsdl.org.mybank/CurrentAccount"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:request="http://wsdl.org.mybank/CurrentAccountRequest"
+	xmlns:response="http://wsdl.org.mybank/CurrentAccountResponse"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="currentAccount"
+	targetNamespace="http://wsdl.org.mybank/CurrentAccount">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://wsdl.org.mybank/CurrentAccount/">
+		</xsd:schema>
+
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import
+				namespace="http://wsdl.org.mybank/CurrentAccountRequest"
+				schemaLocation="CurrentAccountRequest.xsd">
+			</xsd:import>
+		</xsd:schema>
+
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import
+				namespace="http://wsdl.org.mybank/CurrentAccountResponse"
+				schemaLocation="CurrentAccountResponse.xsd">
+			</xsd:import>
+		</xsd:schema>
+
+    </wsdl:types>
+
+	<wsdl:message name="getContractCurrentAccountsRequest">
+		<wsdl:part name="parameters"
+			element="request:getContractCurrentAccountsRequest" />
+	</wsdl:message>
+	<wsdl:message name="getContractCurrentAccountsResponse">
+		<wsdl:part element="response:getContractCurrentAccountsResponse"
+			name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="createContractCurrentAccountRequest">
+		<wsdl:part name="parameters"
+				   element="request:createContractCurrentAccountRequest" />
+	</wsdl:message>
+	<wsdl:message name="createContractCurrentAccountResponse">
+		<wsdl:part element="response:createContractCurrentAccountResponse"
+				   name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="updateContractCurrentAccountRequest">
+		<wsdl:part name="parameters"
+				   element="request:updateContractCurrentAccountRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateContractCurrentAccountResponse">
+		<wsdl:part element="response:updateContractCurrentAccountResponse"
+				   name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="deleteContractCurrentAccountRequest">
+		<wsdl:part name="parameters"
+				   element="request:deleteContractCurrentAccountRequest" />
+	</wsdl:message>
+	<wsdl:message name="deleteContractCurrentAccountResponse">
+		<wsdl:part element="response:deleteContractCurrentAccountResponse"
+				   name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="getAvailableContractsRequest">
+		<wsdl:part name="parameters"
+				   element="request:getAvailableContractsRequest" />
+	</wsdl:message>
+	<wsdl:message name="getAvailableContractsResponse">
+		<wsdl:part element="response:getAvailableContractsResponse"
+				   name="parameters" />
+	</wsdl:message>
+
+	<wsdl:portType name="currentAccount">
+
+		<wsdl:operation name="getAvailableContracts">
+			<wsdl:input message="tns:getAvailableContractsRequest" />
+			<wsdl:output message="tns:getAvailableContractsResponse" />
+		</wsdl:operation>
+
+		<wsdl:operation name="getContractCurrentAccounts">
+			<wsdl:input message="tns:getContractCurrentAccountsRequest" />
+			<wsdl:output message="tns:getContractCurrentAccountsResponse" />
+		</wsdl:operation>
+
+		<wsdl:operation name="createContractCurrentAccount">
+			<wsdl:input message="tns:createContractCurrentAccountRequest" />
+
+		</wsdl:operation>
+
+		<wsdl:operation name="updateContractCurrentAccount">
+			<wsdl:input message="tns:updateContractCurrentAccountRequest" />
+
+		</wsdl:operation>
+
+		<wsdl:operation name="deleteContractCurrentAccount">
+			<wsdl:input message="tns:deleteContractCurrentAccountRequest" />
+
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="currentAccountSOAP" type="tns:currentAccount">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<wsdl:operation name="getAvailableContracts">
+			<soap:operation
+					soapAction="http://wsdl.org.mybank/currentAccount/getAvailableContracts" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="getContractCurrentAccounts">
+			<soap:operation
+					soapAction="http://wsdl.org.mybank/currentAccount/getContractCurrentAccounts" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="createContractCurrentAccount">
+			<soap:operation
+					soapAction="http://wsdl.org.mybank/currentAccount/createContractCurrentAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="updateContractCurrentAccount">
+			<soap:operation
+					soapAction="http://wsdl.org.mybank/currentAccount/updateContractCurrentAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="deleteContractCurrentAccount">
+			<soap:operation
+					soapAction="http://wsdl.org.mybank/currentAccount/deleteContractCurrentAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="currentAccount">
+		<wsdl:port binding="tns:currentAccountSOAP"
+			name="currentAccountSOAP">
+			<soap:address
+				location="http://localhost:8080/currentAccount" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

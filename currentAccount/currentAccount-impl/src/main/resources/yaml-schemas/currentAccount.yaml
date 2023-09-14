@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  license:
+    name: Tiago
+  title: Current Account REST API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8181/cxf/currentAccount
+paths:
+  /contracts:
+    get:
+      summary: Gets all the existing contracts.
+      operationId: getAvailableContracts
+      responses:
+        '200':
+          description: The service response
+          content:
+            application/json:
+              schema:
+                $ref: ./CurrentAccountResponse.yaml#/components/schemas/GetAvailableContractsResponseType
+      tags:
+        - currentAccount
+  /{contractId}/accounts:
+    get:
+      summary: Gets the current accounts owned by the indicated contract.
+      parameters:
+        - name: contractId
+          description: The contract id.
+          in: path
+          required: true
+          schema:
+            type: string
+      operationId: getContractCurrentAccounts
+      responses:
+        '200':
+          description: The service response
+          content:
+            application/json:
+              schema:
+                $ref: ./CurrentAccountResponse.yaml#/components/schemas/GetContractCurrentAccountsResponseType
+      tags:
+        - currentAccount
+  /{currentAccountId}/account:
+    delete:
+      summary: Gets the current accounts owned by the indicated contract.
+      parameters:
+        - name: currentAccountId
+          description: The current account id.
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      operationId: deleteContractCurrentAccount
+      responses:
+        '200':
+          description: The service response
+      tags:
+        - currentAccount
+    put:
+      summary: Updates a current account.
+      parameters:
+        - name: currentAccountId
+          description: The current account id.
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json; charset=UTF-8:
+            schema:
+              $ref: ./CurrentAccountRequest.yaml#/components/schemas/UpdateContractCurrentAccountRequestType
+      operationId: updateContractCurrentAccount
+      responses:
+        '200':
+          description: The service response
+      tags:
+        - currentAccount
+  /account:
+    post:
+      summary: Creates a current account.
+      requestBody:
+        required: true
+        content:
+          application/json; charset=UTF-8:
+            schema:
+              $ref: ./CurrentAccountRequest.yaml#/components/schemas/CreateContractCurrentAccountRequestType
+      operationId: createContractCurrentAccount
+      responses:
+        '200':
+          description: The service response
+      tags:
+        - currentAccount

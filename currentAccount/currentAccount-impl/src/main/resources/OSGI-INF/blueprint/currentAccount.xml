@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+           xmlns:jaxws="http://cxf.apache.org/blueprint/jaxws"
+           xmlns:cxf="http://cxf.apache.org/blueprint/core"
+           xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+             http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+             http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/jaxws.xsd
+             http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+             ">
+
+    <!-- dao support -->
+    <reference id="CurrentAccountDAO"
+               interface="org.mybank.api.persistence.CurrentAccountDAO"
+               availability="mandatory"/>
+
+    <bean id="currentAccountDAO" class="org.mybank.impl.soap.CurrentAccountSoapImpl">
+        <property name="currentAccountDAO" ref="CurrentAccountDAO"/>
+    </bean>
+
+
+    <cxf:bus>
+        <cxf:features>
+            <cxf:logging/>
+        </cxf:features>
+    </cxf:bus>
+
+
+    <!-- Descriptor Support -->
+    <bean id="openApiFeature" class="org.apache.cxf.jaxrs.openapi.OpenApiFeature">
+        <!-- customize some of the properties -->
+        <property name="title" value="CurrentAccount"/>
+        <property name="version" value="1.0.0"/>
+        <property name="license" value="Tiago"/>
+        <property name="scan" value="false"/>
+        <property name="useContextBasedConfig" value="true"/>
+    </bean>
+
+    <!-- REST Support -->
+
+    <bean id="currentAccountRESTService"
+          class="org.mybank.impl.rest.CurrentAccountRestImpl">
+    </bean>
+
+    <jaxrs:server id="restChannel"
+                  address="/currentAccount">
+        <jaxrs:serviceBeans>
+            <ref component-id="currentAccountRESTService"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider"/>
+        </jaxrs:providers>
+        <jaxrs:features>
+            <ref component-id="openApiFeature"/>
+        </jaxrs:features>
+    </jaxrs:server>
+
+
+    <!-- SOAP Support -->
+
+    <bean id="currentAccountSOAPService"
+          class="org.mybank.impl.soap.CurrentAccountSoapImpl">
+    </bean>
+
+    <jaxws:server id="soapChannel"
+                  address="http://0.0.0.0:8080/currentAccount">
+        <jaxws:serviceBean>
+            <ref component-id="currentAccountSOAPService"/>
+        </jaxws:serviceBean>
+        <jaxws:properties>
+            <entry key="soap.env.ns.map">
+                <map>
+                    <entry key="wsse"
+                           value="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+                </map>
+            </entry>
+            <entry key="schema-validation-enabled" value="true"/>
+            <entry key="mtom-enabled" value="true"/>
+        </jaxws:properties>
+    </jaxws:server>
+
+</blueprint>

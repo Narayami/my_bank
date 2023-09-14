@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-config/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-feature/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-feature/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-persistence/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/currentAccount-persistence/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/currentAccount/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-config/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-feature/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-feature/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-persistence/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/customer-persistence/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-config/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-feature/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-feature/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-persistence/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/myBank-channel-persistence/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myBank-channel/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-connector-banka-archiveServices-extension/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-connector-banka-archiveServices-extension/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-adapter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-adapter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-config/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-feature/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-feature/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-persistence/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xcore-service-archiveServices/xcore-service-archiveServices-persistence/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

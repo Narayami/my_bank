@@ -1,0 +1,33 @@
+components:
+  schemas:
+    UpdateContractCurrentAccountRequestType:
+      type: object
+      properties:
+        currentAccount:
+          $ref: '#/components/schemas/CurrentAccountType'
+    CreateContractCurrentAccountRequestType:
+      type: object
+      properties:
+        currentAccount:
+          $ref: '#/components/schemas/CurrentAccountType'
+    CurrentAccountType:
+      type: object
+      properties:
+        contractId:
+          type: string
+        contractDescription:
+          type: string
+openapi: 3.0.0
+paths:
+  /null:
+    get:
+      summary: TBD Model
+      operationId: ''
+      responses:
+        default:
+          description: empty response
+info:
+  license:
+    name: Tiago
+  title: Current Account request model.
+  version: 1.0.0
