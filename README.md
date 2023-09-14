@@ -9,7 +9,7 @@
 - Create a database named "my_bank" (I like using heidisql or Microsoft SQL Server management studio)
 - In case you want to see the logs: Open baretail -> open -> apache-karaf-4.3.6\data\log\karaf.log (optional)
 - Got to apache-karaf-4.3.6\bin and open the cmd. write "karaf" and press enter
-- After it opens, use the following command: kar:install file:repo/myBank-1.0.0.kar (in case you create the repo folder). This will install some dependecies needed.
+- After it opens, use the following command: kar:install file:repo/myBank-1.0.0.kar (note that im using the repo folder). This will install some dependecies needed.
 - Open the cloned project, and compile the currentAccount module. (I use intelliJ as IDE).
 - While its compiling it will generate classes using the openapi-generator plugin and the cxf-codegen-plugin.
 - After that, go to karaf and enter the command: "feature:repo-add mvn:org.mybank/currentAccount-feature/1.0.0-SNAPSHOT/xml/features;"
