@@ -21,9 +21,13 @@
 - ![image](https://github.com/Narayami/my_bank/assets/43100019/5df7c7ee-ded3-48f1-9368-d715f9fb331b)
 
 -For soap services click on the WSDL link, dont forget to change the 0.0.0.0 to localhost. and copy the address. Should be http://localhost:8080/currentAccount?wsdl
+
 -For rest services click on the WADL link and copy it. should be http://localhost:8181/cxf/currentAccount?_wadl
+
 -Open soapUI. Click on SOAP and paste the link on "initial WSDL". And for rest click on rest, then "import WADL" and paste the link.
+
 -It will create the project for rest/soap. In case of soap the request fields are already there by default and just need to fill the values. In case of rest you can use https://editor.swagger.io/ and paste the yaml content to see the fields/objects required. Note that I also have examples on the impl module -> resources -> rest-requests-example.
+
 -Rest should be like this:
  ![image](https://github.com/Narayami/my_bank/assets/43100019/089dfa81-8b3b-40a1-a73b-3fc2d581bb92)
 
